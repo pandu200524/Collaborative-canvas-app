@@ -285,3 +285,22 @@ server.listen(PORT, () => {
     console.log(`🎨 Collaborative Canvas server running on port ${PORT}`);
     console.log(`👉 Open http://localhost:${PORT} to view the application`);
 });
+
+
+// Serve static files from client directory
+app.use(express.static(path.join(__dirname, '../client')));
+
+// ADD THIS HEALTH CHECK ENDPOINT FOR RENDER
+app.get('/health', (req, res) => {
+    res.json({ 
+        status: 'ok', 
+        timestamp: new Date().toISOString(),
+        rooms: rooms.size,
+        message: 'Collaborative Canvas Server is running'
+    });
+});
+
+// Serve the main application for all other routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/index.html'));
+});
