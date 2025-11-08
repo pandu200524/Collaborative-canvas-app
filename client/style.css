@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a1a1a;
+    color: #fff;
+    overflow: hidden;
+}
+
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: #2d2d2d;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #444;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#userList {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.user-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.toolbar {
+    background: #363636;
+    padding: 0.75rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #444;
+}
+
+.tool-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: #2d2d2d;
+    border-radius: 6px;
+    flex-wrap: wrap;
+}
+
+.tool-btn, button {
+    background: #444;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.tool-btn:hover, button:hover {
+    background: #555;
+}
+
+.tool-btn.active {
+    background: #007acc;
+    box-shadow: 0 0 0 2px #005a9e;
+}
+
+input[type="color"] {
+    width: 40px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: transparent;
+}
+
+input[type="range"] {
+    width: 80px;
+}
+
+input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background: #2d2d2d;
+    color: white;
+    min-width: 120px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.canvas-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+}
+
+#drawingCanvas, #cursorCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+}
+
+#cursorCanvas {
+    pointer-events: none;
+}
+
+.status-bar {
+    background: #2d2d2d;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+}
+
+.connected {
+    color: #4CAF50;
+}
+
+.disconnected {
+    color: #f44336;
+}
